@@ -1,0 +1,8 @@
+---
+# tasks file for teams
+- name: TEAMS | Install TEAMS
+  community.general.snap:
+    name:
+      - teams
+    classic: yes
+    state: present

@@ -1,0 +1,10 @@
+# tasks file for asbru
+- name: ASBRU | Download installer
+  ansible.builtin.shell:
+    cmd: curl -1sLf 'https://dl.cloudsmith.io/public/asbru-cm/release/cfg/setup/bash.deb.sh' | sudo -E bash
+
+- name: ASBRU | Install asbru-cm
+  ansible.builtin.apt:
+    name: "asbru-cm"
+    state: latest
+    update_cache: true

@@ -1,0 +1,14 @@
+---
+# Tasks for basic
+- name: BASIC | Install basic software
+  ansible.builtin.apt:
+    pkg:
+    - apt-transport-https
+    - curl
+    - git
+    - htop
+    - nano
+    - vim
+    - wget
+    - nfs-kernel-server
+    update_cache: yes

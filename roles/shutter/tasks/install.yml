@@ -1,0 +1,12 @@
+---
+# tasks file for shutter
+- name: SHUTTER | Add Shutter repository
+  ansible.builtin.apt_repository:
+    repo: ppa:linuxuprising/shutter
+    state: present
+
+- name: SHUTTER | Install Shutter
+  apt:
+    pkg:
+    - shutter
+    update_cache: yes

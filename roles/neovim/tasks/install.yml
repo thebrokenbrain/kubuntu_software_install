@@ -1,0 +1,12 @@
+---
+# tasks file for neovim
+- name: NEOVIM | Add Neovim repository
+  ansible.builtin.apt_repository:
+    repo: ppa:neovim-ppa/stable
+    state: present
+
+- name: NEOVIM | Install Neovim
+  apt:
+    pkg:
+    - neovim
+    update_cache: yes

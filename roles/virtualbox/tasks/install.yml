@@ -1,0 +1,28 @@
+---
+# tasks file for virtualbox
+- name: VIRTUALBOX | Add VirtualBox repo signing key
+  ansible.builtin.apt_key:
+    url: "{{ item }}"
+    state: present
+  with_items:
+    - https://www.virtualbox.org/download/oracle_vbox_2016.asc
+    - https://www.virtualbox.org/download/oracle_vbox.asc
+
+- name: VIRTUALBOX | Add the VirtualBox APT repository to the system
+  ansible.builtin.shell:
+    cmd: echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" | sudo tee -a /etc/apt/sources.list.d/virtualbox.list
+
+- name: VIRTUALBOX | Install VirtualBox
+  ansible.builtin.apt:
+    name: "virtualbox-6.1"
+    state: latest
+    update_cache: true
+
+- name: VIRTUALBOX | Download VirtualBox Extension Pack
+  ansible.builtin.get_url:
+    url: https://download.virtualbox.org/virtualbox/6.1.30/Oracle_VM_VirtualBox_Extension_Pack-6.1.30.vbox-extpack
+    dest: /tmp/Oracle_VM_VirtualBox_Extension_Pack-6.1.30.vbox-extpack
+
+- name: VIRTUALBOX | Install VirtualBox Extension Pack
+  ansible.builtin.shell:
+    cmd: yes | VBoxManage extpack install --replace /tmp/Oracle_VM_VirtualBox_Extension_Pack-6.1.30.vbox-extpack

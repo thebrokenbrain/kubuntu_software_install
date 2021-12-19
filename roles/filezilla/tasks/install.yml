@@ -1,0 +1,12 @@
+---
+# tasks file for filezilla
+- name: FILEZILLA | Add Filezilla repository
+  ansible.builtin.apt_repository:
+    repo: ppa:sicklylife/filezilla
+    state: present
+
+- name: FILEZILLA | Install Filezilla
+  apt:
+    pkg:
+    - filezilla
+    update_cache: yes

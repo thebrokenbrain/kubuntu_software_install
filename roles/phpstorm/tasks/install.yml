@@ -1,0 +1,8 @@
+---
+# tasks file for phpstorm
+- name: PHPSTORM | Install PHPStorm
+  community.general.snap:
+    name:
+      - phpstorm
+    classic: yes
+    state: present

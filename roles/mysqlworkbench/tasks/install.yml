@@ -1,0 +1,11 @@
+---
+# tasks file for mysqlworkbench
+- name: MYSQL WORKBENCH | Download Mysql Workbench package
+  ansible.builtin.get_url:
+    url: https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community_8.0.27-1ubuntu20.04_amd64.deb
+    dest: /tmp/mysqlworkbench.deb
+
+- name: MYSQL WORKBENCH | Install Mysql Workbench
+  ansible.builtin.apt:
+    deb: /tmp/mysqlworkbench.deb
+

@@ -1,0 +1,17 @@
+---
+
+- name: Install software
+  hosts: localhost
+  roles:
+    - { role: asbru }
+    - { role: basic }
+    - { role: chrome }
+    - { role: filezilla }
+    - { role: mysqlworkbench }
+    - { role: neovim }
+    - { role: openvpn }
+    - { role: phpstorm }
+    - { role: shutter }
+    - { role: teams }
+    - { role: vagrant }
+    - { role: virtualbox }
