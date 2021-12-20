@@ -6,9 +6,9 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt dist-upgrade -y
 ```
-### 2. Instalar Ansible.
+### 2. Instalar Ansible y Git.
 ```
-sudo apt install software-properties-common -y
+sudo apt install software-properties-common git -y
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible
 ```
