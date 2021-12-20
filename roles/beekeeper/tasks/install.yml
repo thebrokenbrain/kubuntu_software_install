@@ -1,0 +1,8 @@
+---
+# tasks file for beekeeper
+- name: BEEKEEPER | Install Beekeeper
+  community.general.snap:
+    name:
+      - beekeeper-studio
+    classic: yes
+    state: present
