@@ -5,6 +5,7 @@
   roles:
     - { role: asbru }
     - { role: basic }
+    - { role: beekeeper }
     - { role: chrome }
     - { role: filezilla }
     - { role: mysqlworkbench }
